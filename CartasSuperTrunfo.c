@@ -24,7 +24,7 @@ int main() {
   float area2;
   float pib2;
   int pontos2;
-
+  
   // Área para entrada de dados
 
   //Entrada carta 1
@@ -95,6 +95,15 @@ int main() {
     printf("Area: %.2f km²\n", area2);
     printf("PIB: %.2f bilhoes de reais\n", pib2);
     printf("Número de Pontos Turisticos: %d\n", pontos2);
-
+  
+    // Calcular a densidade 
+  
+float densidade1 = populacao1 / area1;
+float densidade2 = populacao2 / area2;
+  
+printf("\nDENSIDADE POPULACIONAL\n");
+printf("Carta 1: %.2f hab/km²\n", densidade1);
+printf("Carta 2: %.2f hab/km²\n", densidade2);
+  
 return 0;
 } 
