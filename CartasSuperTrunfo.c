@@ -118,9 +118,9 @@ printf("Carta 2: %.2f PIB per Capita\n", pibpercapita2);
  //Calcular o Super Poder
 
   float inversodensidade1 = (1 / densidade1);
-  float superpoder1 = (populacao1 + area1 + pib1 + pontos1 + +pibpercapita1 + inversodensidade1);
+  float superpoder1 = (populacao1 + area1 + pib1 + pontos1 + pibpercapita1 + inversodensidade1);
   float inversodensidade2 = (1 / densidade2);
-  float superpoder2 = (populacao2 + area2 + pib2 + pontos2 +  +pibpercapita2 + inversodensidade2);
+  float superpoder2 = (populacao2 + area2 + pib2 + pontos2 + pibpercapita2 + inversodensidade2);
 
   printf("\nSuper Poder\n");
   printf("O super poder da carta 1 e de: %.2f \n", superpoder1);
@@ -128,7 +128,7 @@ printf("Carta 2: %.2f PIB per Capita\n", pibpercapita2);
 
   //Comparação de Cartas
 
-  printf("\nComparação de Cartas\n");
+  printf("\nComparação\n");
   long int comparacaopopulacao = populacao1 > populacao2;
   float comparacaoarea = area1 > area2;
   float comparacaopib = pib1> pib2;
@@ -144,5 +144,40 @@ printf("Carta 2: %.2f PIB per Capita\n", pibpercapita2);
   printf ("Os Pontos turisticos da carta 1 vencerom: %d\n", comparacaopontos);
   printf ("O PIB per capita da carta 1 venceu: %f\n", comparacaopibpercarpita);
   printf ("A densidade da carta 2 venceu: %f\n", comparacaoinversodensidade);
+
+  // Estruturas de comparação
+
+  printf("\nComparação\n");
+  if (populacao1 > populacao2) {
+    printf("A Populaçao da carta 1 venceu!\n");
+    } else {
+      printf("A Populaçao da carta 2 venceu!\n");
+    }
+  if (area1 > area2) {
+    printf("A Area da carta 1 venceu!\n");
+    } else {
+      printf("A Area da carta 2 venceu!\n");
+    }
+  if (pib1 > pib2) {
+    printf("O PIB da carta 1 venceu!\n");
+    } else {
+      printf("A PIB da carta 2 venceu!\n");
+    }
+  if (pontos1 > pontos2) {
+    printf("Os Pontos Turisticos da carta 1 venceu!\n");
+    } else {
+      printf("Os Pontos Turisticos da carta 2 venceu!\n");
+    }
+  if (pibpercapita1 > pibpercapita2) {
+    printf("O PIB per capita da carta 1 venceu!\n");
+    } else {
+      printf("O PIB per capita da carta 2 venceu!\n");
+    }
+  if (densidade1 < densidade2) {
+    printf("A densidade da carta 1 venceu!\n");
+    } else {
+      printf("A densidade da carta 2 venceu!\n");
+    }
+
 return 0;
 } 
