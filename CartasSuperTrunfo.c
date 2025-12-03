@@ -138,41 +138,73 @@ printf("Carta 2: %.2f PIB per Capita\n", pibpercapita2);
 
   //Exibir os Resultados das Comparações
 
-  printf ("A População da carta 1 venceu %.lu\n", comparacaopopulacao);
+  printf ("A População da carta 1 venceu %lu\n", comparacaopopulacao);
   printf ("A Área da Carta 1 venceu %f\n", comparacaoarea);
   printf ("O PIB da Carta 1 venceu %f\n", comparacaopib);
   printf ("Os Pontos turisticos da carta 1 vencerom: %d\n", comparacaopontos);
   printf ("O PIB per capita da carta 1 venceu: %f\n", comparacaopibpercarpita);
   printf ("A densidade da carta 2 venceu: %f\n", comparacaoinversodensidade);
 
-  // Estruturas de comparação
+  // Comparação de cartas (Atributo: População):
 
-  printf("\nComparação\n");
+  printf("\nComparação de cartas (Atributo: População)\n");
+  printf("Carta 1:%lu\n", populacao1);
+  printf("Carta 2:%lu\n", populacao2);
   if (populacao1 > populacao2) {
     printf("A Populaçao da carta 1 venceu!\n");
     } else {
       printf("A Populaçao da carta 2 venceu!\n");
     }
+  
+  // Comparação de cartas (Atributo: Area):
+
+  printf("\nComparação de cartas (Atributo: Area)\n");
+  printf("Carta 1:%f\n", area1);
+  printf("Carta 2:%f\n", area2);
   if (area1 > area2) {
     printf("A Area da carta 1 venceu!\n");
     } else {
       printf("A Area da carta 2 venceu!\n");
     }
+  
+   // Comparação de cartas (Atributo: PIB):
+
+  printf("\nComparação de cartas (Atributo: PIB)\n");
+  printf("Carta 1:%f\n", pib1);
+  printf("Carta 2:%f\n", pib2);
   if (pib1 > pib2) {
     printf("O PIB da carta 1 venceu!\n");
     } else {
       printf("A PIB da carta 2 venceu!\n");
     }
+
+  // Comparação de cartas (Atributo: PIB):
+
+  printf("\nComparação de cartas (Atributo: Pontos Turisticos)\n");
+  printf("Carta 1:%d\n", pontos1);
+  printf("Carta 2:%d\n", pontos2);
   if (pontos1 > pontos2) {
     printf("Os Pontos Turisticos da carta 1 venceu!\n");
     } else {
       printf("Os Pontos Turisticos da carta 2 venceu!\n");
     }
+
+  // Comparação de cartas (Atributo: PIB per capita):
+
+  printf("\nComparação de cartas (Atributo: Pib per capita)\n");
+  printf("Carta 1:%f\n", pibpercapita1);
+  printf("Carta 2:%f\n", pibpercapita2);
   if (pibpercapita1 > pibpercapita2) {
     printf("O PIB per capita da carta 1 venceu!\n");
     } else {
       printf("O PIB per capita da carta 2 venceu!\n");
     }
+
+   // Comparação de cartas (Atributo: Densidade Populacional):
+
+  printf("\nComparação de cartas (Atributo: Densidade Populacional)\n");
+  printf("Carta 1:%f\n", densidade1);
+  printf("Carta 2:%f\n", densidade2);
   if (densidade1 < densidade2) {
     printf("A densidade da carta 1 venceu!\n");
     } else {
