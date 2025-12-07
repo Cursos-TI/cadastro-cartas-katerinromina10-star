@@ -239,53 +239,45 @@ printf ("Escolha:\n");
 scanf ("%d", &escolhajogador2);
 
   switch (escolhajogador1)
-{
-case 1:
-  printf("Jogador 1:  População -");
-  break;
-case 2:
-  printf("Jogador 1: Area -");
-  break;
-case 3:
-  printf("Jogador 1: PIB -");
-  break;
-case 4:
-  printf("Jogador 1: Pontos Turisticos -");
-  break;
-case 5:
-  printf("Jogador 1: PIB Per capita -");
-  break;
-case 6:
-  printf("Jogador 1: Densidade Demográfica -");
-  break;
-default:
-printf("Opcao invalida\n");
-  break;
+switch (escolhajogador1) {
+  case 1: valor1 = populacao1;
+    break;
+  case 2: valor1 = area1; 
+    break;
+  case 3: valor1 = pib1;
+    break;
+  case 4: valor1 = pontos1; 
+    break;
+  case 5: valor1 = pibpercapita1; 
+    break;
+  case 6: valor1 = densidade1;
+    abreak;
 }
-    switch (escolhajogador2)
-{
-case 1:
-  printf("Jogador 2:  População -");
-  break;
-case 2:
-  printf("Jogador 2: Area -");
-  break;
-case 3:
-  printf("Jogador 2: PIB -");
-  break;
-case 4:
-  printf("Jogador 2: Pontos Turisticos -");
-  break;
-case 5:
-  printf("Jogador 2: PIB Per capita -");
-  break;
-case 6:
-  printf("Jogador 2: Densidade Demográfica -");
-  break;  
-default:
-printf("Opcao invalida\n");
-  break;
+    switch (escolhajogador2) {
+  case 1: valor2 = populacao2; 
+    break;
+  case 2: valor2 = area2; 
+    break;
+  case 3: valor2 = pib2; 
+    break;
+  case 4: valor2 = pontos2; 
+    break;
+  case 5: valor2 = pibpercapita2; 
+    break;
+  case 6: valor2 = densidade2;
+    break;
 }
+  if(escolhajogador1==escolhajogador2)
+{
+  printf ("Empate\n");
   
+} else if ((escolhajogador == 1) && (escolhacomputador == 3) ||
+            (escolhajogador == 2) && (escolhacomputador == 1) ||
+            (escolhajogador == 3) && (escolhacomputador == 2))
+{
+    printf("Parabens, voce ganhou!\n");
+} else {
+    printf("Voce perdeu!\n");
+}
 return 0;
 } 
