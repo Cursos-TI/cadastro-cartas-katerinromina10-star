@@ -210,6 +210,82 @@ printf("Carta 2: %.2f PIB per Capita\n", pibpercapita2);
     } else {
       printf("A densidade da carta 2 venceu!\n");
     }
+  
+// Menu interativo
+  
+ int escolhajogador1;
+ int escolhajogador2;
 
+
+printf ("Escolha uma opçao, JOGADOR 1:\n");
+printf ("1. População\n");
+printf ("2. Area\n");
+printf ("3. PIB\n");
+printf ("4. Pontos Turisticos\n");
+printf ("5. PIB per capita\n");
+printf ("6. Densidade Demográfica\n");
+printf ("Escolha:\n");
+scanf ("%d", &escolhajogador1);
+
+
+printf ("Escolha uma opçao, JOGADOR 2:\n");
+printf ("1. População\n");
+printf ("2. Area\n");
+printf ("3. PIB\n");
+printf ("4. Pontos Turisticos\n");
+printf ("5. PIB per capita\n");
+printf ("6. Densidade Demográfica\n");
+printf ("Escolha:\n");
+scanf ("%d", &escolhajogador2);
+
+  switch (escolhajogador1)
+{
+case 1:
+  printf("Jogador 1:  População -");
+  break;
+case 2:
+  printf("Jogador 1: Area -");
+  break;
+case 3:
+  printf("Jogador 1: PIB -");
+  break;
+case 4:
+  printf("Jogador 1: Pontos Turisticos -");
+  break;
+case 5:
+  printf("Jogador 1: PIB Per capita -");
+  break;
+case 6:
+  printf("Jogador 1: Densidade Demográfica -");
+  break;
+default:
+printf("Opcao invalida\n");
+  break;
+}
+    switch (escolhajogador2)
+{
+case 1:
+  printf("Jogador 2:  População -");
+  break;
+case 2:
+  printf("Jogador 2: Area -");
+  break;
+case 3:
+  printf("Jogador 2: PIB -");
+  break;
+case 4:
+  printf("Jogador 2: Pontos Turisticos -");
+  break;
+case 5:
+  printf("Jogador 2: PIB Per capita -");
+  break;
+case 6:
+  printf("Jogador 2: Densidade Demográfica -");
+  break;  
+default:
+printf("Opcao invalida\n");
+  break;
+}
+  
 return 0;
 } 
