@@ -211,73 +211,94 @@ printf("Carta 2: %.2f PIB per Capita\n", pibpercapita2);
       printf("A densidade da carta 2 venceu!\n");
     }
   
-// Menu interativo
-  
- int escolhajogador1;
- int escolhajogador2;
+  // Menu Interativo
 
+  int escolha;
 
-printf ("Escolha uma opçao, JOGADOR 1:\n");
-printf ("1. População\n");
-printf ("2. Area\n");
-printf ("3. PIB\n");
-printf ("4. Pontos Turisticos\n");
-printf ("5. PIB per capita\n");
-printf ("6. Densidade Demográfica\n");
-printf ("Escolha:\n");
-scanf ("%d", &escolhajogador1);
+  printf("\nMenu\n");
+  printf("Escolha o atributo para comparar:\n");
+  printf("1. População\n");
+  printf("2. Área\n");
+  printf("3. PIB\n");
+  printf("4. Pontos Turísticos\n");
+  printf("5. PIB per Capita\n");
+  printf("6. Densidade Demográfica\n");
+  printf("Escolha: ");
+  scanf("%d", &escolha);
 
+  printf("\nResultado\n");
+  printf("Carta 1: %s\n", cidade1);
+  printf("Carta 2: %s\n", cidade2);
 
-printf ("Escolha uma opçao, JOGADOR 2:\n");
-printf ("1. População\n");
-printf ("2. Area\n");
-printf ("3. PIB\n");
-printf ("4. Pontos Turisticos\n");
-printf ("5. PIB per capita\n");
-printf ("6. Densidade Demográfica\n");
-printf ("Escolha:\n");
-scanf ("%d", &escolhajogador2);
+  float valor1 = 0, valor2 = 0;
+  char atributo[30];
 
-  switch (escolhajogador1)
-switch (escolhajogador1) {
-  case 1: valor1 = populacao1;
-    break;
-  case 2: valor1 = area1; 
-    break;
-  case 3: valor1 = pib1;
-    break;
-  case 4: valor1 = pontos1; 
-    break;
-  case 5: valor1 = pibpercapita1; 
-    break;
-  case 6: valor1 = densidade1;
-    abreak;
-}
-    switch (escolhajogador2) {
-  case 1: valor2 = populacao2; 
-    break;
-  case 2: valor2 = area2; 
-    break;
-  case 3: valor2 = pib2; 
-    break;
-  case 4: valor2 = pontos2; 
-    break;
-  case 5: valor2 = pibpercapita2; 
-    break;
-  case 6: valor2 = densidade2;
-    break;
-}
-  if(escolhajogador1==escolhajogador2)
-{
-  printf ("Empate\n");
-  
-} else if ((escolhajogador == 1) && (escolhacomputador == 3) ||
-            (escolhajogador == 2) && (escolhacomputador == 1) ||
-            (escolhajogador == 3) && (escolhacomputador == 2))
-{
-    printf("Parabens, voce ganhou!\n");
-} else {
-    printf("Voce perdeu!\n");
-}
+switch (escolha) {
+
+  case 1:
+  valor1 = populacao1;
+  valor2 = populacao2;
+  sprintf(atributo, "População");
+  break;
+
+  case 2:
+  valor1 = area1;
+  valor2 = area2;
+  sprintf(atributo, "Área");
+  break;
+
+  case 3:
+  valor1 = pib1;
+  valor2 = pib2;
+  sprintf(atributo, "PIB");
+  break;
+
+  case 4:
+  valor1 = pontos1;
+  valor2 = pontos2;
+  sprintf(atributo, "Pontos Turísticos");
+  break;
+
+  case 5:
+  valor1 = pibpercapita1;
+  valor2 = pibpercapita2;
+  sprintf(atributo, "PIB per Capita");
+  break;
+
+  case 6:
+  valor1 = densidade1;
+  valor2 = densidade2;
+  sprintf(atributo, "Densidade");
+  break;
+
+  default:
+  printf("\nOpção inválida!\n");
+    
 return 0;
-} 
+    }
+
+    // Mostrar valores
+  
+    printf("Atributo selecionado: %s\n", atributo);
+    printf("Carta 1 (%s): %.2f\n", cidade1, valor1);
+    printf("Carta 2 (%s): %.2f\n", cidade2, valor2);
+
+    if (escolha == 6) {
+        if (valor1 < valor2)
+            printf("Vencedora: Carta 1 (%s) — menor densidade!\n", cidade1);
+        else if (valor2 < valor1)
+            printf("Vencedora: Carta 2 (%s) — menor densidade!\n", cidade2);
+        else
+            printf("Empate!\n");
+
+    } else {
+        if (valor1 > valor2)
+            printf("Vencedora: Carta 1 (%s)!\n", cidade1);
+        else if (valor2 > valor1)
+            printf("Vencedora: Carta 2 (%s)!\n", cidade2);
+        else
+            printf("Empate!\n");
+    }
+
+    return 0;
+}
