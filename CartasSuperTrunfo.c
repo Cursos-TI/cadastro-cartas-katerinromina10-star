@@ -300,5 +300,138 @@ return 0;
             printf("Empate!\n");
     }
 
+   // Escolha do Primeiro Atributo 
+
+    int opcao1, opcao2;
+
+    printf("\nMENU DE ATRIBUTOS\n");
+    printf("Escolha o PRIMEIRO atributo:\n");
+    printf("1. População\n");
+    printf("2. Área\n");
+    printf("3. PIB\n");
+    printf("4. Pontos Turísticos\n");
+    printf("5. PIB per Capita\n");
+    printf("6. Densidade\n");
+    printf("Escolha: ");
+    scanf("%d", &opcao1);
+
+    if (opcao1 < 1 || opcao1 > 6) {
+        printf("Opção inválida!\n");
+        return 0;
+    }
+
+    // Segundo Atributo
+
+    printf("\nEscolha o SEGUNDO atributo (não pode repetir):\n");
+
+    for (int i = 1; i <= 6; i++) {
+        if (i != op1) {
+            switch (i) {
+                case 1: printf("1. População\n"); 
+                  break;
+                case 2: printf("2. Área\n"); 
+                  break;
+                case 3: printf("3. PIB\n"); 
+                  break;
+                case 4: printf("4. Pontos Turísticos\n"); 
+                  break;
+                case 5: printf("5. PIB per Capita\n");
+                  break;
+                case 6: printf("6. Densidade\n"); 
+                  break;
+      }
+     }
+    }
+
+    printf("Escolha: ");
+    scanf("%d", &opcao2);
+
+    if (opcao2 < 1 || op2 > 6 || opcao2 == op1) {
+        printf("Opção inválida!\n");
+        return 0;
+    }
+
+    // -------- Função que retorna o valor com base no atributo --------
+
+    float getValor(int atributo, int carta) {
+        if (carta == 1) {
+            switch (atributo) {
+                case 1: return populacao1;
+                case 2: return area1;
+                case 3: return pib1;
+                case 4: return pontos1;
+                case 5: return pibpercapita1;
+                case 6: return densidade1;
+            }
+        } else {
+            switch (atributo) {
+                case 1: return populacao2;
+                case 2: return area2;
+                case 3: return pib2;
+                case 4: return pontos2;
+                case 5: return pibpercapita2;
+                case 6: return densidade2;
+            }
+        }
+        return 0;
+    }
+
+    // Nome atributos
+    char nomeAtributo[7][30] = {
+        "",
+        "População",
+        "Área",
+        "PIB",
+        "Pontos Turísticos",
+        "PIB per Capita",
+        "Densidade"
+    }
+
+    float v1_c1 = getValor(opcao1, 1);
+    float v1_c2 = getValor(opcao1, 2);
+
+    float v2_c1 = getValor(opcao2, 1);
+    float v2_c2 = getValor(opcao2, 2);
+
+    // Logica
+
+    if (op1 == 6) 
+        resultado1 = (v1_c1 < v1_c2) ? 1 : (v1_c2 < v1_c1 ? 2 : 0);
+    else 
+        resultado1 = (v1_c1 > v1_c2) ? 1 : (v1_c2 > v1_c1 ? 2 : 0);
+
+    if (op2 == 6)
+        resultado2 = (v2_c1 < v2_c2) ? 1 : (v2_c2 < v2_c1 ? 2 : 0);
+    else
+        resultado2 = (v2_c1 > v2_c2) ? 1 : (v2_c2 > v2_c1 ? 2 : 0);
+
+    // Somas
+
+    float soma1 = v1_c1 + v2_c1;
+    float soma2 = v1_c2 + v2_c2;
+
+    printf("\n===== RESULTADO FINAL =====\n");
+    printf("Carta 1: %s\n", cidade1);
+    printf("Carta 2: %s\n\n", cidade2);
+
+    printf("Atributo 1: %s\n", nomeAtributo[op1]);
+    printf("Carta 1: %.2f   |   Carta 2: %.2f\n\n", v1_c1, v1_c2);
+
+    printf("Atributo 2: %s\n", nomeAtributo[op2]);
+    printf("Carta 1: %.2f   |   Carta 2: %.2f\n\n", v2_c1, v2_c2);
+
+    printf("SOMA FINAL:\n");
+    printf("%s = %.2f\n", cidade1, soma1);
+    printf("%s = %.2f\n\n", cidade2, soma2);
+
+ // Vencedor
+
+    if (soma1 > soma2)
+        printf("Vencedora: CARTA 1 (%s)!\n", cidade1);
+    else if (soma2 > soma1)
+        printf("Vencedora: CARTA 2 (%s)!\n", cidade2);
+    else
+        printf("EMPATE!\n");
+
     return 0;
 }
